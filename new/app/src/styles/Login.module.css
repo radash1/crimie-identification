@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.container .panel {
+  padding: auto 0;
+  height: 500px;
+  width: 800px;
+  border-radius: 30px;
+  display: flex;
+}
+
+.container .panel .left_side {
+  background: #353d88;
+  height: 500px;
+  width: 400px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.container .panel .left_side .logo {
+  height: 100px;
+  width: auto;
+}
+
+.container .panel .left_side .title {
+  padding-top: 20px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.container .panel .right_side {
+  background: #fff;
+  height: 500px;
+  width: 400px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.container .panel .right_side .title {
+  font-weight: bold;
+  font-size: 32px;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.container .panel .right_side .form {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.container .panel .right_side .form .text_box {
+  height: 32px;
+  width: 250px;
+  margin: 10px;
+  text-align: center;
+  border: 0px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 6px;
+  outline: none;
+}
+
+.container .panel .right_side .form .text_box::placeholder {
+  color: #ccc;
+}
+
+.container .panel .right_side .form .text_box:focus {
+  box-shadow: 0 0 8px #353d88;
+}
+
+.container .panel .right_side .form .login_button {
+  background: #353d88;
+  color: #fff;
+  border-radius: 8px;
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}

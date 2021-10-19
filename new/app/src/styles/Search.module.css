@@ -1,0 +1,109 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container .panel {
+  height: 650px;
+  width: 800px;
+  border-radius: 30px;
+  background: #fff;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.container .panel .form {
+  padding: 20px 0;
+}
+
+.container .panel .title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.container .panel .form .row {
+  display: flex;
+  width: 650px;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.container .panel .form .row .left_side {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+}
+
+.container .panel .form .row .left_side .text_box {
+  width: 230px;
+  height: 25px;
+}
+
+.container .panel .form .row .right_side {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+}
+
+.container .panel .form .row .right_side .text_box {
+  width: 100px;
+  height: 25px;
+}
+
+.container .panel .form .row .select_box {
+  width: 650px;
+  height: 30px;
+}
+
+.container .panel .form .row .text_area {
+  width: 530px;
+}
+
+.container .panel .form input,
+.container .panel .form select,
+.container .panel .form textarea {
+  border-radius: 6px;
+  border: #ccc 1px solid;
+  outline: 0;
+}
+
+.container .panel .form input:focus,
+.container .panel .form select:focus,
+.container .panel .form textarea:focus {
+  border: 1px solid #353d88;
+}
+
+.container .panel .form .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.container .panel .form .buttons button {
+  height: 35px;
+  width: 100px;
+  border: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.container .panel .form .buttons .search_button {
+  background: #353d88;
+}
+
+.container .panel .form .buttons .clear_button {
+  background: #bebebe;
+}
