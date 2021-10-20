@@ -1,45 +1,58 @@
 import styles from "../styles/Profile.module.css";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const Profile = () => {
   const [actions, setActions] = useState([]);
   const location = useLocation();
   const data = location.data;
+  const history = useHistory();
+
+  const getData = () => {
+    const value = {
+      type: "physical",
+    };
+
+    axios.post("http://localhost:5000/api/profile", value).then((res) => {
+      if (res.data.result != null) {
+        const result = res.data.result;
+        setActions(result.actions.split(","));
+      } else {
+      }
+    });
+  };
 
   useEffect(() => {
+    getData();
+  }, []);
 
-  }, [])
-
-  const name = data.name;
-  const age = data.suspect_age;
-  const history = data.behavior;
-  // const actions = [
-  //   "Lorem ipsum dolor sit amet consectetur",
-  //   "Lorem ipsum dolor sit amet consectetur",
-  //   "Lorem ipsum dolor sit amet consectetur",
-  //   "Lorem ipsum dolor sit amet consectetur",
-  // ];
+  const onGoBack = async () => {
+    history.push("/search");
+  };
 
   return (
     <div className={styles.container}>
       <div className={styles.panel}>
         <div className={styles.title_block}>
-          <button className={styles.back_button}>Go Back</button>
+          <button onClick={onGoBack} className={styles.back_button}>
+            Go Back
+          </button>
           <h1 className={styles.title}>Criminal Profile</h1>
         </div>
         <div className={styles.data}>
           <div className={styles.row}>
             <p className={styles.text}>Name:</p>
-            <p className={styles.value}>{name}</p>
+            <p className={styles.value}>{data.name}</p>
           </div>
           <div className={styles.row}>
             <p className={styles.text}>Age:</p>
-            <p className={styles.value}>{age}</p>
+            <p className={styles.value}>{data.suspect_age}</p>
           </div>
           <div className={styles.row}>
             <p className={styles.text}>History:</p>
-            <p className={styles.value}>{history}</p>            
+            <p className={styles.value}>{data.behavior}</p>
           </div>
         </div>
         <div className={styles.divider}></div>

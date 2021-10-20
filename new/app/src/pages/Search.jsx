@@ -8,6 +8,7 @@ const Search = () => {
   const [suspectAge, setSuspectAge] = useState("");
   const [victimName, setVictimName] = useState("");
   const [victimAge, setVictimAge] = useState("");
+  const [type, setType] = useState("");
 
   const history = useHistory();
 
@@ -19,9 +20,9 @@ const Search = () => {
       suspectAge,
       victimName,
       victimAge,
+      type,
     };
     axios.post("http://localhost:5000/api/search", data).then((res) => {
-      console.log(res);
       if (res.data.result != null) {
         history.push({
           pathname: "/search-result",
@@ -88,7 +89,31 @@ const Search = () => {
               name="victim_relationship"
               id="victim_relationship"
             >
-              <option value="test">test</option>
+              <option value="" disabled selected>
+                Select your option
+              </option>
+              <option value="mother">mother</option>
+              <option value="father">father</option>
+              <option value="mother's boyfriend">mother's boy friend</option>
+              <option value=""></option>
+            </select>
+          </div>
+          <div className={styles.row}>
+            <p>Type</p>
+            <select
+              style={{ width: "530px" }}
+              onChange={(e) => setType(e.target.value)}
+              className={styles.select_box}
+              name="type"
+              id="type"
+            >
+              <option value="" disabled selected>
+                Select your option
+              </option>
+              <option value="physical">physical</option>
+              <option value="mental">mental</option>
+              <option value="sexual">sexual</option>
+              <option value="neglect">neglect</option>
             </select>
           </div>
           <div className={styles.row}>
