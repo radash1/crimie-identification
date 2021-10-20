@@ -2,30 +2,26 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var CrimeSchema = new Schema({
-  Vname: {
+  name: {
     type: String,
   },
-  Vage: {
+  gender: {
     type: String,
   },
-  Sname: {
+  age: {
     type: String,
   },
-  Sage: {
+  type: {
     type: String,
   },
-  Vrel: {
+  criminal_relationship: {
     type: String,
   },
-  behaviour: {
+  behavior: {
     type: String,
   },
   evidence: {
     type: String,
-  },
-  entered: {
-    type: Date,
-    default: Date.now,
   },
 });
 

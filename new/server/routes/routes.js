@@ -3,7 +3,7 @@ const { search, login, profile } = require("../controllers/controller");
 const router = express.Router();
 
 router.post("/login", login);
-router.get("/search", search);
-router.get("/profile", profile);
+router.post("/search", search);
+router.post("/profile", profile);
 
 module.exports = router;

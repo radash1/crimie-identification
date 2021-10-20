@@ -7,11 +7,12 @@
 }
 
 .container .panel {
-  height: 650px;
+  height: 550px;
   width: 800px;
   border-radius: 30px;
   background: #fff;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-auto-rows: 30px;
   padding: 30px 50px;
   box-sizing: border-box;
@@ -44,5 +45,46 @@
 
 .container .panel .data {
   padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  padding-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .panel .data .row {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.container .panel .data .row .text {
+  justify-self: right;
+}
+
+.container .panel .data .row .value {
+  justify-self: left;
+}
+
+.container .panel .divider {
+  align-self: center;
+  height: 1px;
+  width: 500px;
+  background: #ccc;
+  display: block;
+}
+
+.container .panel .actions {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+}
+
+.container .panel .action_list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  padding-top: 10px;
 }

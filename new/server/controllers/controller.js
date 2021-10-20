@@ -1,18 +1,36 @@
 const User = require("../models/user");
+const Crime = require("../models/crime");
 
 const login = (req, res) => {
-  User.findOne({ username: "abc", password: "123" }).then((result) => {
+  console.log("params", req.body);
+  User.findOne({
+    username: req.body.username,
+    password: req.body.password,
+  }).then((result) => {
     res.send({
       page: "login",
-      data: result,
+      result,
     });
   });
 };
 
 const search = (req, res) => {
-  res.send({
-    page: "search",
+  console.log("body", req.body);
+  Crime.find({
+    age: req.body.victimAge,
+  }).then((result) => {
+    res.send({
+      page: "search",
+      result,
+    });
   });
+
+  // Crime.where('type').equals('physical').exec((err, result) => {
+  //   res.send({
+  //     page: "search",
+  //     result,
+  //   });
+  // });
 };
 
 const profile = (req, res) => {

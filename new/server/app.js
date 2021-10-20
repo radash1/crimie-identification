@@ -1,9 +1,15 @@
 var express = require("express");
+var cors = require("cors");
 const mongoose = require("mongoose");
 const routes = require("./routes/routes");
-const {json} = require("body-parser");
+const { json, urlencoded } = require("body-parser");
 
 const app = express();
+
+app.use(cors());
+
+app.use(json());
+app.use(urlencoded({ extended: true }));
 
 // connect to database
 const dbURL = "mongodb://root:1234@localhost/criminal_db";
@@ -16,9 +22,6 @@ mongoose
     app.listen(5000);
   })
   .catch((err) => console.log(err));
-
-// app.listen(5000);
-app.use(json());
 
 app.get("/", (req, res) => {
   res.send("hello");
