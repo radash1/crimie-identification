@@ -1,6 +1,19 @@
+import { useEffect } from "react";
 import styles from "../styles/Login.module.css";
+import axios from 'axios'
 
 const Login = () => {
+  const onSubmit =  async() => {
+    axios.get('http://localhost:5000/api/search').then(res => {
+      // Handle Your response here.
+      // Likely you may want to set some state
+      // setResponse(res);
+      console.log(res);
+   });
+    // const data = await axios.get('http://localhost:5000/api/search');
+    // console.log(data);
+}
+
   return (
     <div className={styles.container}>
       <div className={styles.panel}>
@@ -25,7 +38,9 @@ const Login = () => {
               id="password"
               placeholder="Password"
             />
-            <button className={styles.login_button}>Login</button>
+            <button onClick={onSubmit} className={styles.login_button}>
+              Login
+            </button>
           </div>
         </div>
       </div>

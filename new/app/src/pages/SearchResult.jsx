@@ -18,7 +18,7 @@ const SearchResult = () => {
           <h1 className={styles.title}>Search Result</h1>
         </div>
         <div className={styles.result_count}>
-          <p>12 records found</p>
+          <p>{data.length} records found</p>
         </div>
         <div className={styles.result}>
           {data.map((item) => (
