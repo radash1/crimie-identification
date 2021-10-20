@@ -12,7 +12,7 @@ app.use(json());
 app.use(urlencoded({ extended: true }));
 
 // connect to database
-const dbURL = "mongodb://root:1234@localhost/criminal_db";
+const dbURL = "mongodb+srv://root:1234@cluster69.xondy.mongodb.net/criminal_db?retryWrites=true&w=majority";
 mongoose
   .connect(dbURL)
   .then((result) => {
